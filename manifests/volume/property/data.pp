@@ -104,7 +104,7 @@ class gluster::volume::property::data() {
 		'cluster.self-heal-window-size' => 'integer',	# default: 1
 
 		# Sets the quorum percentage for the trusted storage pool.
-		'cluster.server-quorum-ratio' => '',	# default: (null)
+		'cluster.server-quorum-ratio' => 'string',	# default: (null)
 
 		# If set to server, enables the specified volume to participate in quorum.
 		'cluster.server-quorum-type' => 'string',	# default: (null)
@@ -165,7 +165,7 @@ class gluster::volume::property::data() {
 		'nfs.addr-namelookup' => '',	# default: (null)
 
 		# This option is used to start or stop NFS server for individual volume.
-		'nfs.disable' => '',	# default: (null)
+		'nfs.disable' => 'offon',	# default: (null)
 
 		# Internal option set to tell gnfs to use a different scheme for encoding file handles when DVM is being used.
 		'nfs.dynamic-volumes' => '',	# default: (null)
@@ -223,6 +223,13 @@ class gluster::volume::property::data() {
 
 		# Type of access desired for this subvolume: read-only, read-write(default)
 		'nfs.volume-access' => '',	# default: (null)
+
+	    # NFS WRITE BEHIND
+	    'performance.nfs.write-behind' => 'onoff',
+
+	    # NFS QUICK READ
+	    'performance.nfs.quick-read' => 'onoff',
+
 
 		# Maximum file size which would be cached by the io-cache translator.
 		'performance.cache-max-file-size' => '',	# default: 0
