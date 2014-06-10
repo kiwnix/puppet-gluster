@@ -313,6 +313,9 @@ class gluster::volume::property::data() {
 		# Size of the write-behind buffer for a single file (inode).
 		'performance.write-behind-window-size' => '',	# default: 1MB
 
+                #DRC
+                'nfs.drc' => 'offon',
+
 		# NOTE: this option taken from gluster documentation
 		# Allow client connections from unprivileged ports. By default only privileged ports are allowed. This is a global setting in case insecure ports are to be enabled for all exports using a single option.
 		'server.allow-insecure' => 'offon',	# XXX: description and manual differ in their mention of what the correct default is, so which is it?
